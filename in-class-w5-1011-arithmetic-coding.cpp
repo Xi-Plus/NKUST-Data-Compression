@@ -40,6 +40,9 @@ string decode(map<char, pair<double, double> > table, double value) {
 int main() {
 	cout<<fixed<<setprecision(17);
 	encodeobj res = encode("BILL GATES");
+	for(map<char, pair<double, double> >::iterator it=res.table.begin(); it!=res.table.end(); ++it) {
+		cout<<it->first<<" "<<it->second.first<<" "<<it->second.second<<endl;
+	}
 	cout<<res.value<<endl;
 	
 	cout<<decode(res.table, res.value)<<endl;
